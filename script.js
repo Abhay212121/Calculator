@@ -87,8 +87,6 @@ const resultGenerator = () => {
     }
 }
 
-let consecutiveFlag = false
-
 operatorBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
 
@@ -97,8 +95,6 @@ operatorBtn.forEach((btn) => {
         }
 
         let temp = result.innerHTML[result.innerHTML.length - 1]
-
-
 
         opcount++;
 
@@ -124,18 +120,13 @@ operatorBtn.forEach((btn) => {
 })
 
 calculateBtn.addEventListener('click', () => {
-
     let tempArr = result.innerHTML.split(op)
     let tempnum1 = +tempArr[0]
     let tempnum2 = +tempArr[1]
 
-
-    if (typeof (tempnum1) == "number" && typeof (tempnum2) == "number") {
+    if (typeof (tempnum1) == "number" && typeof (tempnum2) == "number" && tempnum2 != 0) {
         resultGenerator();
         opcount = 0
-    }
-    else {
-        result.innerHTML = 'hii'
     }
 })
 
