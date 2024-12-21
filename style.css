@@ -19,9 +19,12 @@
 }
 
 .result-container{
+    height: 4rem;
     padding: 1.5rem;
     font-size: x-large;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .inner-container{
@@ -44,7 +47,6 @@
 
 .btn:active{
     background-color: #908d8d;
-
 }
 
 .small-btn{
