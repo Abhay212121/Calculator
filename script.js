@@ -35,7 +35,6 @@ const operate = (operator, num1, num2) => {
     }
 }
 
-
 let result = document.querySelector('.result-container');
 let calculateBtn = document.querySelector('.answer');
 let clearBtn = document.querySelector('.clear')
@@ -97,21 +96,29 @@ operatorBtn.forEach((btn) => {
             result.innerHTML = ''
         }
 
+        let temp = result.innerHTML[result.innerHTML.length - 1]
+
+
 
         opcount++;
 
         if (opcount == 1) {
+
             op = btn.innerHTML;
             result.innerHTML += btn.innerHTML;
         }
 
-        else if (opcount == 2) {
+        else {
+            if (temp == '+' || temp == '-' || temp == '*' || temp == '/' || temp == '%') {
+                result.innerHTML = result.innerHTML.slice(0, -1)
+                op = btn.innerHTML;
+                result.innerHTML += btn.innerHTML;
+                return
+            }
             resultGenerator()
             op = btn.innerHTML;
             result.innerHTML += btn.innerHTML;
         }
-
-
         decicount = 0
     })
 })
